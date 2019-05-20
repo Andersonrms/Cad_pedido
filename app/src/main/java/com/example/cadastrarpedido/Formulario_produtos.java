@@ -19,6 +19,7 @@ public class Formulario_produtos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_produtos);
+        produto = new Produtos();
         bdHelper = new Produtosdb (Formulario_produtos.this);
         Intent intent = getIntent();
         editarProduto = (Produtos) intent.getSerializableExtra("produto-escolhido");

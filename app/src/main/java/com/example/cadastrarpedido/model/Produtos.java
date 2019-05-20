@@ -1,9 +1,17 @@
 package com.example.cadastrarpedido.model;
 
-public class Produtos {
+import java.io.Serializable;
+
+public class Produtos implements Serializable{
     private long id;
     private String nomeproduto, descricao;
     private int quantidade;
+
+
+    @Override
+    public String toString() {
+        return nomeproduto.toString();
+    }
 
     public long getId() {
         return id;

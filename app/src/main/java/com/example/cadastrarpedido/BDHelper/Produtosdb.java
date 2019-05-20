@@ -45,7 +45,7 @@ public class Produtosdb extends SQLiteOpenHelper{
         getWritableDatabase().insert("produtos",null,values);
     }
 
-    /*
+
     public void alterarProduto(Produtos produto){
         ContentValues values = new ContentValues();
 
@@ -53,17 +53,18 @@ public class Produtosdb extends SQLiteOpenHelper{
         values.put("descricao",produto.getDescricao());
         values.put("quantidade",produto.getQuantidade());
 
-        String [] args = {produto.getId().toString()};
+        String[] args = {String.valueOf(produto.getId())};
         getWritableDatabase().update("produtos",values,"id=?",args);
-    }/*
+    }
 
-    /*
+
     public void deletarProduto(Produtos produto){
 
-        String [] args = {produto.getId().toString};
+        String[] args = {String.valueOf(produto.getId())};
         getWritableDatabase().delete("produtos","id=?",args);
+
     }
-    */
+
     public ArrayList<Produtos> getLista(){
         String [] columns = {"id","nomeproduto","descricao","quantidade"};
         Cursor cursor = getWritableDatabase().query("produtos", columns, null, null, null, null,null, null);
